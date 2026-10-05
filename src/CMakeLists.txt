@@ -116,6 +116,7 @@ list(APPEND lib_sources
         core/crpa_workflow.cpp
         core/crpa_window_input.cpp
         core/orbital_weights.cpp
+        api/export_chi0.cpp
         core/coulmat.cpp
         core/dielecmodel.cpp
         core/epsilon.cpp
