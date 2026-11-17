@@ -94,6 +94,7 @@ list(APPEND lib_sources
         core/atomic_basis.cpp
         core/chi0.cpp
         api/export_chi0.cpp
+        api/export_chi0_symmetry.cpp
         core/coulmat.cpp
         core/dielecmodel.cpp
         core/epsilon.cpp

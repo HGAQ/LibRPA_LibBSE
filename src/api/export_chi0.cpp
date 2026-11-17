@@ -1,4 +1,5 @@
 #include "dataset_helper.h"
+#include "export_chi0_symmetry.h"
 #include "../core/chi0.h"
 #include "../core/epsilon.h"
 #include "../io/global_io.h"
@@ -12,6 +13,10 @@
 namespace librpa_int {
 namespace {
 void write_response(const Chi0 &chi, const std::string &directory, double omega) {
+    if (chi.qpoint_view().restore_mode == SymmetryQPointRestoreMode::FULL_CRYSTAL) {
+        export_chi0_symmetry(chi, directory, omega);
+        return;
+    }
     const auto &basis=chi.atbasis_abf; const int n=basis.nb_total;
     auto pbc=chi.pbc; pbc.map_irk_ks.clear();
     const auto &qlist=chi.active_qpoints();
